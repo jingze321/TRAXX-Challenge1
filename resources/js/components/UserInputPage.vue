@@ -51,7 +51,7 @@
     <label for="exampleInputEmail1">Website/LinkedIn Profile URL</label>
     <input type="text" v-model="urlLink" class="form-control" :class="{ 'is-invalid':urlLinkErr}" id="exampleInputEmail1" placeholder="Enter url link">
     <div class="invalid-feedback d-block" v-if="urlLinkErr">
-        Please insert valid email.
+        Please insert valid url.
     </div>
   </div>
   <button type="submit" class="btn btn-primary float-end mt-2">Preview</button>
@@ -98,7 +98,6 @@
                 this.email = this.infoData?.email;
                 this.urlLink = this.infoData?.urlLink;
             }
-            console.log(this.infoData,'userData')
         },
         methods: {
             validate() {
@@ -166,12 +165,10 @@
                         urlLink:this.urlLink,
                     })
                     .then((res)=> {
-                            // console.log(res.data,'res')
                             window.location.href = "/view";
                         })
                 }
 
-                // axios.get('api/get-user-data').then((res)=> console.log(res,'res'))
             }
         }
     }

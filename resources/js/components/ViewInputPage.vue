@@ -61,8 +61,7 @@ id="app"
         //     this.getItem();
         // },
         mounted(){
-          // console.log(this.json);
-          // console.log(this.infoData);
+
           if(this.infoData&&this.countryCodeList){
             this.fetchCountryCode=this.countryCodeList.find(country=>country.dial_code===this.infoData.phone.dialCode)
           }
@@ -74,7 +73,6 @@ id="app"
                 .then((res)=> {
                   alert(res.data);
                   window.location.href = "/";
-                  console.log(res.data,'res');
                 }
               )
            },

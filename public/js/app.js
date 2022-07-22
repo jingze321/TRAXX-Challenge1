@@ -5369,8 +5369,6 @@ __webpack_require__.r(__webpack_exports__);
       this.email = (_this$infoData5 = this.infoData) === null || _this$infoData5 === void 0 ? void 0 : _this$infoData5.email;
       this.urlLink = (_this$infoData6 = this.infoData) === null || _this$infoData6 === void 0 ? void 0 : _this$infoData6.urlLink;
     }
-
-    console.log(this.infoData, 'userData');
   },
   methods: {
     validate: function validate() {
@@ -5444,11 +5442,9 @@ __webpack_require__.r(__webpack_exports__);
           email: this.email,
           urlLink: this.urlLink
         }).then(function (res) {
-          // console.log(res.data,'res')
           window.location.href = "/view";
         });
-      } // axios.get('api/get-user-data').then((res)=> console.log(res,'res'))
-
+      }
     }
   }
 });
@@ -5533,8 +5529,6 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    // console.log(this.json);
-    // console.log(this.infoData);
     if (this.infoData && this.countryCodeList) {
       this.fetchCountryCode = this.countryCodeList.find(function (country) {
         return country.dial_code === _this.infoData.phone.dialCode;
@@ -5547,7 +5541,6 @@ __webpack_require__.r(__webpack_exports__);
       axios__WEBPACK_IMPORTED_MODULE_0___default().post('api/save', this.infoData).then(function (res) {
         alert(res.data);
         window.location.href = "/";
-        console.log(res.data, 'res');
       });
     },
     getImgUrl: function getImgUrl(code) {
@@ -28552,7 +28545,7 @@ var render = function () {
           _vm._v(" "),
           _vm.urlLinkErr
             ? _c("div", { staticClass: "invalid-feedback d-block" }, [
-                _vm._v("\n        Please insert valid email.\n    "),
+                _vm._v("\n        Please insert valid url.\n    "),
               ])
             : _vm._e(),
         ]),
